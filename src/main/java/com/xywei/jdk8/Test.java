@@ -15,5 +15,18 @@ public class Test {
                 System.out.println(integer);
             }
         });
+
+        //编译器根据list 可以推断出 i的类型
+        list.forEach(i -> {
+            System.out.println(i);
+        });
+
+        //也可以声明i类型
+        list.forEach((Integer i) -> {
+            System.out.println(i);
+        });
+
+        //方法引用形式
+        list.forEach(System.out::println);
     }
 }
