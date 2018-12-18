@@ -8,3 +8,14 @@ FunctionalInterface
 3.如果某个接口只有一个抽象方法,但我们并没有给该接口声明FunctionalInterface注解,那么编译器依旧会将该接口看作是函数式接口
 
 lambda 表达式在java中是对象,对象,对象,但是 对象必须依附于特殊的类型---函数式接口functionInterface
+
+
+(type1 arg1,type2 arg2) -> { body }
+
+( arg1, arg2) -> { body }
+
+arg1 -> { body }
+
+s -> System.out.println(s)
+
+高阶函数：如果一个函数接收另外一个函数作为参数，或者返回一个函数
