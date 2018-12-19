@@ -16,13 +16,14 @@ public class FunctionTest {
 
         System.out.println(test.convert(5, value -> value + "helloworld"));
 
+        //事先声明Function变量
         Function<Integer, Integer> function = value -> value * 2;
 
-        System.out.println(test.compute(4,function));
+        System.out.println(test.compute(4, function));
 
     }
 
-    public  int compute(int a, Function<Integer, Integer> function) {
+    public int compute(int a, Function<Integer, Integer> function) {
         int result = function.apply(a);
         return result;
     }
