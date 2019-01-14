@@ -21,6 +21,13 @@ public class PredicateTest2 {
         //全部不打印
         predicateTest2.condiditonFilter(list, item -> false);
 
+        // 大于5 并且 偶数
+        System.out.println("大于5并且是偶数");
+        predicateTest2.conditionFilter2(list, item -> item % 2 == 0, item -> item > 5);
+
+        // Predicate.isEquals();
+        System.out.println(predicateTest2.isEquals("test").test("test"));
+
     }
 
 
@@ -30,5 +37,23 @@ public class PredicateTest2 {
                 System.out.println(integer);
             }
         }
+    }
+
+    //and or
+    public void conditionFilter2(List<Integer> list, Predicate<Integer> predicate, Predicate<Integer> predicate1) {
+        for (Integer integer : list) {
+            if (predicate.and(predicate1).test(integer)) {
+                //if (predicate.and(predicate1).test(integer)) {
+                if (predicate.and(predicate1).negate().test(integer)) {
+                    System.out.println(integer);
+                }
+            }
+        }
+    }
+
+
+    // Predicate.isEqual()
+    public Predicate<String> isEquals(Object object) {
+        return Predicate.isEqual(object);
     }
 }
