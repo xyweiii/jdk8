@@ -14,6 +14,7 @@ public class FunctionTest {
         System.out.println(test.compute(3, value -> value * value));
 
 
+
         System.out.println(test.convert(5, value -> value + "helloworld"));
 
         //事先声明Function变量
